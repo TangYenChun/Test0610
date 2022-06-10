@@ -1,0 +1,13 @@
+Question 1:
+SELECT 
+    p.firstname, p.lastname, a.city, a.state
+FROM Person p
+INNER JOIN Address a ON p.person == a.person
+
+Question 2:
+SELECT
+    c.name AS Customers
+FROM Customers c
+WHERE c.id NOT IN (
+    SELECT customerId FROM Order
+)

@@ -13,23 +13,46 @@ namespace Program
             
         }
 
-        private void Question1(int[] nums, int target)
+        private int[] Question1(int[] nums, int target)
         {
+            int[] result = new int[2];
             for(int i = 0; i < nums.Length; i++)
             {
                 for(int j = 0; j < nums.Length; j++)
                 {
                     if(nums[i] + nums[j] == target)
                     {
-                        Console.WriteLine($"[{nums[i]}, {nums[j]}]");
+                        result[0] = i;
+                        result[1] = j;
+                        return result;
+                    }
+                }
+            }
+            return result;
+        }
+
+        private void Question4(int[] nums)
+        {
+            for(int i = 0; i < nums.Length; i++)
+            {
+                for(int j = 0; j < nums.Length; j++)
+                {
+                    if (nums[i] > nums[j])
+                    {
+                        nums[j] = nums[i];
+                        nums[i] = nums[j];
                     }
                 }
             }
         }
 
-        private void Question5(int n)
+        private bool Question6(int n)
         {
-
+            if(n % 4 == 0 || n == 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
