@@ -1,0 +1,4 @@
+SELECT 
+    p.firstname, p.lastname, a.city, a.state
+FROM Person p
+INNER JOIN Address a ON p.person == a.person
